@@ -1,15 +1,15 @@
 name: Ma première Action
 on: [push]
 jobs:
-  Explorer-Actions-Githb:
-  runs-on: ubuntu-latest
-  steps:
+  Explorer-Actions-Github:
+    runs-on: ubuntu-latest
+    steps:
      - run: echo " La tâche a été automatiquement déclenchée par un événement ${{github.event_name}}."
      - run: echo " Cette tâche s'exécute maintenane sur un serveur ${{runner.os}} hébergé par GitHub !"
-     - run: echo " Le nom de votre branche est ${{githb.ref}} et votre dépôt est ${{githb.repository}}."
+     - run: echo " Le nom de votre branche est ${{github.ref}} et votre dépôt est ${{github.repository}}."
      - name: Récupérer le code du dépôt
        uses: actions/checkout@v4
-     - run: echo "Le dépôt ${{githb.repository}} a été cloné sur le runner."
+     - run: echo "Le dépôt ${{github.repository}} a été cloné sur le runner."
      - run: echo "Le `workflow` est maintenant prêt à tester votre code sur le runner."
      - name: Lister les fichiers du dépôt
        run: |
